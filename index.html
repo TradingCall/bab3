@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Trading Saham dari Nol — Bab 3: Analisis Fundamental Mendalam untuk Pemula.">
+<title>Bab 3 — Analisis Fundamental Komprehensif | Ebook Interaktif</title>
+<style>
+:root{
+  --bg:#f6f7f5; --surface:#fff; --surface2:#eef1ed; --text:#17201b; --muted:#66706a;
+  --line:#dce2dd; --accent:#173f2c; --accent2:#2e7653; --accent-soft:#e4efe8;
+  --warn:#8b6417; --warn-bg:#fff7df; --danger:#8b3737; --danger-bg:#fff0f0;
+  --shadow:0 18px 50px rgba(23,32,27,.08); --radius:22px; --sidebar:280px;
+}
+[data-theme="dark"]{
+  --bg:#101512; --surface:#171d19; --surface2:#202822; --text:#eef4ef; --muted:#a8b3ab;
+  --line:#303a33; --accent:#a8d7bb; --accent2:#70bd91; --accent-soft:#20392b;
+  --warn:#e4bd67; --warn-bg:#302814; --danger:#ef9a9a; --danger-bg:#321b1b;
+  --shadow:0 18px 50px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.7}
+button,a{font:inherit}
+a{color:inherit}
+.progress{position:fixed;z-index:1000;top:0;left:0;height:4px;width:0;background:var(--accent2);transition:width .12s}
+.topbar{position:fixed;z-index:900;top:4px;left:0;right:0;height:64px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 22px}
+.brand{font-weight:850;letter-spacing:-.03em}
+.top-actions{margin-left:auto;display:flex;gap:8px}
+.icon-btn,.menu-btn{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:12px;padding:8px 11px;cursor:pointer}
+.menu-btn{display:none}
+.layout{display:grid;grid-template-columns:var(--sidebar) 1fr;max-width:1500px;margin:auto}
+.sidebar{position:sticky;top:68px;height:calc(100vh - 68px);padding:30px 20px;border-right:1px solid var(--line);overflow:auto}
+.side-title{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:800;margin:12px 10px}
+.toc a{display:block;text-decoration:none;padding:10px 12px;border-radius:11px;color:var(--muted);font-size:14px;margin:3px 0}
+.toc a:hover,.toc a.active{background:var(--accent-soft);color:var(--accent);font-weight:750}
+.main{min-width:0}
+section.chapter{padding:90px 8vw;border-top:1px solid var(--line);scroll-margin-top:74px}
+.chapter-head{display:grid;grid-template-columns:120px 1fr;gap:25px;align-items:start;margin-bottom:42px}
+.chapter-no{font-size:14px;font-weight:900;color:var(--accent2);letter-spacing:.1em}
+h2{font-size:clamp(32px,4vw,56px);line-height:1.05;letter-spacing:-.045em;margin:0 0 14px}
+h3{font-size:24px;line-height:1.2;margin:38px 0 12px;letter-spacing:-.02em}
+h4{margin:0 0 8px;font-size:17px}
+.lead{font-size:19px;color:var(--muted);max-width:780px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}
+.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:0 8px 25px rgba(0,0,0,.025)}
+.callout{padding:20px 22px;border-radius:18px;margin:24px 0;border:1px solid var(--line);background:var(--surface)}
+.callout.tip{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent2) 35%,var(--line))}
+.callout.warn{background:var(--warn-bg);border-color:color-mix(in srgb,var(--warn) 30%,var(--line))}
+.label{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);display:block;margin-bottom:7px}
+table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:24px 0}
+th,td{text-align:left;padding:15px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface2);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+tr:last-child td{border-bottom:0}
+.checklist{display:grid;gap:10px;margin:20px 0}
+.check{display:flex;align-items:flex-start;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--accent2);margin-top:3px}
+.check.done{opacity:.65;text-decoration:line-through}
+.quiz{background:var(--surface2);border-radius:20px;padding:24px;margin:25px 0}
+.quiz button{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:11px;padding:10px 14px;margin:5px;cursor:pointer}
+.quiz .result{font-weight:800;margin-top:12px}
+.chapter-nav{display:flex;justify-content:space-between;gap:12px;margin-top:55px;padding-top:28px;border-top:1px solid var(--line)}
+.chapter-nav a{flex:1;text-decoration:none}
+.chapter-nav a:last-child{text-align:right}
+.progress-wrap{margin:25px 0;background:var(--surface2);border-radius:99px;height:10px;overflow:hidden}
+.progress-inner{height:100%;width:0;background:var(--accent2);transition:width .2s}
+.footer{padding:70px 8vw;border-top:1px solid var(--line);color:var(--muted)}
+.small{font-size:14px;color:var(--muted)}
+@media(max-width:980px){
+  .layout{display:block}
+  .sidebar{position:fixed;z-index:850;left:-310px;top:68px;width:290px;background:var(--bg);box-shadow:var(--shadow);transition:left .25s;height:calc(100vh - 68px)}
+  .sidebar.open{left:0}
+  .menu-btn{display:block}
+}
+@media(max-width:700px){
+  .grid,.grid.three{grid-template-columns:1fr}
+  .chapter-head{grid-template-columns:1fr;gap:8px}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="readProgress"></div>
+<header class="topbar">
+  <button class="menu-btn" id="menuBtn">☰</button>
+  <div class="brand">TRADING SAHAM DARI NOL — BAB 3</div>
+  <div class="top-actions">
+    <button class="icon-btn" id="themeBtn">☾</button>
+    <button class="icon-btn" id="resetBtn">↺</button>
+  </div>
+</header>
+
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+  <div class="side-title">Daftar Isi Bab 3</div>
+  <nav class="toc">
+    <a href="#sub1" class="active">01 — Filosofi Bisnis Saham</a>
+    <a href="#sub2">02 — Bedah 3 Pilar Keuangan</a>
+    <a href="#sub3">03 — Mitos Harga vs Market Cap</a>
+    <a href="#sub4">04 — Analisis Profitabilitas & Utang</a>
+    <a href="#sub5">05 — Valuasi Komprehensif (PER & PBV)</a>
+    <a href="#sub6">06 — Menghindari Value Trap</a>
+    <a href="#quiz-section">07 — Studi Kasus & Kuis Profesional</a>
+    <a href="#checklist">08 — Checkpoint Bab 3</a>
+  </nav>
+  <div class="side-title">Progress Bab</div>
+  <div class="progress-wrap"><div class="progress-inner" id="chapterProgress"></div></div>
+  <div class="small" id="progressText">0% selesai</div>
+</aside>
+
+<main class="main">
+
+<section class="chapter" id="sub1">
+  <div class="chapter-head">
+    <div class="chapter-no">BAB 03</div>
+    <div>
+      <h2>Analisis Fundamental Profesional</h2>
+      <p class="lead">Menguak kesehatan operasional korporasi secara menyeluruh dan meluruskan miskonsepsi ukuran nilai perusahaan.</p>
+    </div>
+  </div>
+
+  <h3>01 / Filosofi Bisnis: Membeli Kepemilikan Nyata</h3>
+  <p>Dalam kacamata analisis fundamental, fluktuasi harga saham harian di layar monitor hanyalah "suara bising" (*noise*). Fokus utama seorang analis fundamental adalah membedah nilai intrinsik perusahaan berdasarkan kemampuan bisnisnya menghasilkan arus kas masa depan.</p>
+  <p>Ketika Anda memutuskan membeli saham sebuah emiten (misalnya sektor perbankan, konsumer, atau telekomunikasi), Anda sedang bertindak sebagai mitra bisnis pasif. Oleh karena itu, pemahaman mendalam mengenai model bisnis, keunggulan kompetitif (*economic moat*), serta integritas manajemen menjadi fondasi mutlak sebelum modal disetorkan.</p>
+  
+  <div class="callout tip">
+    <span class="label">Kaedah Utama Investor Profesional</span>
+    <em>"Harga adalah apa yang Anda bayar, nilai adalah apa yang Anda dapatkan."</em> Selalu pastikan harga pembelian saham berada di bawah atau wajar dibandingkan dengan nilai fundamental perusahaannya.
+  </div>
+</section>
+
+<section class="chapter" id="sub2">
+  <h3>02 / Bedah 3 Pilar Utama Laporan Keuangan</h3>
+  <p>Perusahaan publik diwajibkan merilis laporan keuangan secara berkala setiap akhir triwulan (Q1, Q2, Q3) dan tahunan (Full Year). Laporan ini diaudit oleh Kantor Akuntan Publik independen untuk memastikan transparansi. Berikut bedah rinci 3 pilar utamanya:</p>
+  
+  <div class="grid three">
+    <div class="card">
+      <span class="label">Pilar 1</span>
+      <h4>Laporan Laba Rugi (Income Statement)</h4>
+      <p>Menggambarkan siklus operasional dalam periode waktu tertentu. Terdiri dari <strong>Pendapatan (Revenue/Top Line)</strong> dari hasil penjualan produk/jasa, dikurangi beban HPP dan operasional, hingga menghasilkan <strong>Laba Bersih (Net Income/Bottom Line)</strong>.</p>
+    </div>
+    <div class="card">
+      <span class="label">Pilar 2</span>
+      <h4>Neraca Keuangan (Balance Sheet)</h4>
+      <p>Menyajikan posisi finansial statis pada tanggal tertentu. Menggunakan persamaan akuntansi mutlak: <br><strong>Aset = Liabilitas (Utang) + Ekuitas (Modal)</strong>. Membantu melihat seberapa besar perusahaan membiayai asetnya dari utang luar.</p>
+    </div>
+    <div class="card">
+      <span class="label">Pilar 3</span>
+      <h4>Laporan Arus Kas (Cash Flow Statement)</h4>
+      <p>Memetakan aliran uang tunai murni yang masuk dan keluar, terbagi menjadi 3 aktivitas: Operasi (bisnis inti), Investasi (pembelian aset/pabrik), dan Pendanaan (pembayaran dividen/utang). Kas operasional wajib bernilai positif.</p>
+    </div>
+  </div>
+</section>
+
+<section class="chapter" id="sub3">
+  <h3>03 / Mitos Harga Saham: Mengapa Harga Mahal Belum Tentu Bernilai Besar?</h3>
+  <p>Kesalahan terbesar dan paling sering menjebak pemula adalah menganggap saham berharga ribuan rupiah (misal Rp10.000 per lembar) lebih "mahal" daripada saham berharga ratusan perak (misal Rp500 per lembar).</p>
+  <p>Di pasar modal, ukuran besar atau kecilnya sebuah perusahaan <strong>bukan ditentukan oleh harga per lembarnya</strong>, melainkan oleh <strong>Market Cap (Kapitalisasi Pasar)</strong>.</p>
+  
+  <div class="callout tip">
+    <span class="label">Rumus Kapitalisasi Pasar (Market Cap)</span>
+    $$\text{Market Cap} = \text{Harga Saham per Lembar} \times \text{Total Seluruh Saham Beredar}$$
+  </div>
+
+  <p><strong>Studi Kasus Perbandingan:</strong></p>
+  <ul>
+    <li><strong>Saham A:</strong> Harga per lembar <strong>Rp10.000</strong>, tetapi total saham yang beredar di publik hanya 1 juta lembar. Maka Market Cap-nya = Rp10.000 × 1.000.000 = <strong>Rp10 Miliar</strong> saja. (Perusahaan skala kecil).</li>
+    <li><strong>Saham B:</strong> Harga per lembar tampak murah yaitu <strong>Rp500</strong>, tetapi jumlah saham yang beredar sangat raksasa yaitu 20 Miliar lembar. Maka Market Cap-nya = Rp500 × 20.000.000.000 = <strong>Rp10 Triliun</strong>! (Perusahaan skala raksasa).</li>
+  </ul>
+  <p>Kesimpulannya: Saham B jauh lebih "besar" dan bernilai tinggi secara korporasi ketimbang Saham A, meskipun harga satuan per lembarnya terlihat jauh lebih murah Saham B.</p>
+</section>
+
+<section class="chapter" id="sub4">
+  <h3>04 / Analisis Profitabilitas, Efisiensi, & Struktur Utang</h3>
+  <p>Angka laba besar di laporan laba rugi tidak ada artinya jika dibarengi dengan tumpukan utang yang mencekik atau inefisiensi operasional. Profesional menggunakan indikator berikut untuk mengukurnya:</p>
+  
+  <ul>
+    <li><strong>Net Profit Margin (NPM):</strong> Dihitung dengan rumus $(\text{Laba Bersih} \div \text{Pendapatan}) \times 100\%$. Mengukur seberapa efisien perusahaan mengubah setiap rupiah penjualan menjadi keuntungan bersih setelah dipotong seluruh beban.</li>
+    <li><strong>Debt to Equity Ratio (DER):</strong> Dihitung dari $(\text{Total Liabilitas} \div \text{Total Ekuitas})$. Rasio ini mengukur tingkat agresivitas pendanaan utang. Untuk emiten non-keuangan, DER idealnya berada di bawah 1,0x (atau maksimal 1,5x dalam kondisi ekspansi sehat).</li>
+    <li><strong>Return on Equity (ROE):</strong> Dihitung dari $(\text{Laba Bersih} \div \text{Total Ekuitas}) \times 100\%$. Ini adalah indikator favorit investor legendaris untuk melihat seberapa optimal manajemen memutar modal pemegang saham menjadi laba. ROE di atas 15% dikategorikan sangat baik.</li>
+  </ul>
+</section>
+
+<section class="chapter" id="sub5">
+  <h3>05 / Valuasi Komprehensif: PER & PBV secara Kontekstual</h3>
+  <p>Menilai kemurahan suatu saham tidak bisa dilakukan secara pukul rata. Angka PER (Price to Earning Ratio) dan PBV (Price to Book Value) harus dianalisis berdasarkan konteks historis dan sektor industrinya.</p>
+  
+  <table>
+    <thead>
+      <tr><th>Metrik Valuasi</th><th>Formula Matematis</th><th>Standar Analisis Profesional</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>PER (Price to Earnings)</strong></td>
+        <td>$\text{Harga Saham} \div \text{EPS (Laba per Saham)}$</td>
+        <td>Mengindikasikan masa pengembalian modal investasi. PER rendah (<10x) bisa berarti murah, namun bisa juga merefleksikan prospek industri yang sedang suram. Bandingkan dengan rata-rata PER industri sejenis (*peer comparison*).</td>
+      </tr>
+      <tr>
+        <td><strong>PBV (Price to Book Value)</strong></td>
+        <td>$\text{Harga Saham} \div \text{BVPS (Nilai Buku per Saham)}$</td>
+        <td>Membandingkan valuasi pasar terhadap modal bersih perusahaan. PBV < 1,0x sering dianggap diskon terhadap aset, namun lazim ditemui pada sektor siklikal atau perbankan dengan efisiensi tertentu.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="chapter" id="sub6">
+  <h3>06 / Anatomi Jebakan "Value Trap"</h3>
+  <p>Kesalahan fatal pemula adalah berasumsi bahwa saham dengan PER di bawah 5x atau PBV di bawah 0,5x pasti memberikan keuntungan besar. Fenomena ini sering kali menjerumuskan investor ke dalam perangkap nilai (*Value Trap*).</p>
+  
+  <div class="callout warn">
+    <span class="label">Karakteristik Utama Value Trap</span>
+    <ul>
+      <li><strong>Penurunan Struktur Bisnis:</strong> Produk perusahaan mulai ditinggalkan konsumen akibat disrupsi teknologi (contoh: perusahaan ritel konvensional tanpa transformasi digital yang kuat).</li>
+      <li><strong>Arus Kas Operasional Negatif:</strong> Meskipun laporan laba rugi mencatat keuntungan akuntansi, kas aktual terus tergerus akibat piutang yang tidak tertagih atau persediaan menumpuk.</li>
+      <li><strong>Tata Kelola Buruk (Bad Governance):</strong> Manajemen kerap menerbitkan aksi korporasi yang merugikan pemegang saham minoritas (seperti *right issue* berulang tanpa kejelasan ekspansi produktif).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="chapter" id="quiz-section">
+  <h3>07 / Evaluasi Profesional (Kuis Perbandingan Harga & Market Cap)</h3>
+  <div class="quiz" data-answer="b">
+    <strong>Perhatikan kasus berikut: Saham PT Maju (Harga Rp800/lembar, total saham 50 miliar lembar) dan Saham PT Sejahtera (Harga Rp5.000/lembar, total saham 1 miliar lembar). Manakah perusahaan yang memiliki ukuran bisnis (Market Cap) jauh lebih besar?</strong><br>
+    <button data-choice="a">PT Sejahtera, karena harga per lembarnya jauh lebih mahal (Rp5.000 vs Rp800).</button><br>
+    <button data-choice="b">PT Maju, karena Market Cap-nya mencapai Rp40 Triliun, sedangkan PT Sejahtera hanya Rp5 Triliun.</button><br>
+    <button data-choice="c">Keduanya sama besar karena harga saham tidak memengaruhi nilai perusahaan di bursa.</button>
+    <div class="result"></div>
+  </div>
+</section>
+
+<section class="chapter" id="checklist">
+  <h3>08 / Checkpoint Kesiapan Bab 3</h3>
+  <div class="checklist">
+    <label class="check"><input type="checkbox" data-check="f3_1"><span>Saya memahami bahwa harga per lembar tidak menentukan ukuran perusahaan, melainkan Market Cap.</span></label>
+    <label class="check"><input type="checkbox" data-check="f3_2"><span>Saya dapat membedakan fungsi dan isi dari Laporan Laba Rugi, Neraca, dan Arus Kas.</span></label>
+    <label class="check"><input type="checkbox" data-check="f3_3"><span>Saya mampu menghitung dan menganalisis margin laba (NPM), struktur utang (DER), dan imbal hasil modal (ROE).</span></label>
+    <label class="check"><input type="checkbox" data-check="f3_4"><span>Saya menguasai penggunaan rasio PER dan PBV serta waspada terhadap Value Trap.</span></label>
+  </div>
+
+  <div class="chapter-nav">
+    <span></span>
+    <a class="btn" href="bab4.html">Lanjut ke Bab 4 (Teknikal & Sistem Eksekusi) →</a>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer class="footer">
+  <strong>Trading Saham dari Nol — Bab 3 Analisis Fundamental Profesional</strong><br>
+  <span class="small">Bangun ketajaman analisis bisnis sebelum menempatkan modal di pasar modal.</span>
+</footer>
+
+<script>
+const $ = (s,root=document)=>root.querySelector(s);
+const $$ = (s,root=document)=>[...root.querySelectorAll(s)];
+const storageKey='trading-bab3-checks-pro-v2', themeKey='trading-theme';
+
+function loadChecks(){
+  let saved={}; try{saved=JSON.parse(localStorage.getItem(storageKey)||'{}')}catch(e){}
+  $$('[data-check]').forEach(el=>{
+    el.checked=!!saved[el.dataset.check];
+    el.closest('.check')?.classList.toggle('done',el.checked);
+  });
+  updateProgress();
+}
+function saveCheck(el){
+  let saved={}; try{saved=JSON.parse(localStorage.getItem(storageKey)||'{}')}catch(e){}
+  saved[el.dataset.check]=el.checked;
+  localStorage.setItem(storageKey,JSON.stringify(saved));
+  el.closest('.check')?.classList.toggle('done',el.checked);
+  updateProgress();
+}
+function updateProgress(){
+  const all=$$('[data-check]'), done=all.filter(x=>x.checked).length, pct=all.length?Math.round(done/all.length*100):0;
+  $('#chapterProgress').style.width=pct+'%'; $('#progressText').textContent=pct+'% selesai';
+}
+$$('[data-check]').forEach(el=>el.addEventListener('change',()=>saveCheck(el)));
+
+$$('.quiz').forEach(q=>{
+  $$('button',q).forEach(b=>b.addEventListener('click',()=>{
+    const result=$('.result',q), correct=q.dataset.answer;
+    result.textContent = b.dataset.choice === correct ? '✓ Tepat sekali! Anda sudah paham konsep Market Cap (Rp800 × 50M = Rp40T vs Rp5.000 × 1M = Rp5T).' : 'Belum tepat. Ingat: Market Cap = Harga Saham dikali Total Lembar Beredar!';
+  }));
+});
+
+function setTheme(t){document.documentElement.dataset.theme=t;localStorage.setItem(themeKey,t);$('#themeBtn').textContent=t==='dark'?'☀':'☾'}
+setTheme(localStorage.getItem(themeKey)||'light');
+$('#themeBtn').addEventListener('click',()=>setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark'));
+$('#resetBtn').addEventListener('click',()=>{
+  if(confirm('Reset checklist bab ini?')){localStorage.removeItem(storageKey);loadChecks();}
+});
+$('#menuBtn').addEventListener('click',()=>$('#sidebar').classList.toggle('open'));
+$$('.toc a').forEach(a=>a.addEventListener('click',()=>$('#sidebar').classList.remove('open')));
+
+const chapters=$$('.chapter');
+const tocLinks=$$('.toc a');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      tocLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+    }
+  });
+},{rootMargin:'-20% 0px -65% 0px',threshold:0});
+chapters.forEach(c=>observer.observe(c));
+
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  $('#readProgress').style.width=(h>0?(window.scrollY/h)*100:0)+'%';
+},{passive:true});
+
+loadChecks();
+</script>
+</body>
+</html>
